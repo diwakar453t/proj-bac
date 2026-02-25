@@ -106,9 +106,9 @@ export function LandingPage() {
                         <Link to="/login">
                             <Button variant="ghost" size="sm">Sign In</Button>
                         </Link>
-                        <Link to="/signup">
+                        <a href="/ask-ai.html">
                             <Button size="sm">Get Started</Button>
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -136,11 +136,11 @@ export function LandingPage() {
                                 Track your daily wellness, get AI-driven insights, and take control of your mental health with personalized recommendations.
                             </p>
                             <div className="flex flex-col sm:flex-row items-start gap-4">
-                                <Link to="/signup">
+                                <a href="/ask-ai.html">
                                     <Button size="lg">
                                         Start Free <ArrowRight className="w-5 h-5" />
                                     </Button>
-                                </Link>
+                                </a>
                                 <Link to="/login">
                                     <Button variant="outline" size="lg">
                                         Sign In
@@ -343,14 +343,14 @@ export function LandingPage() {
                         <p className="text-white/80 mb-8 max-w-xl mx-auto">
                             Join thousands of users who are taking control of their mental health with Mind Matrix.
                         </p>
-                        <Link to="/signup">
+                        <a href="/ask-ai.html">
                             <Button
                                 size="lg"
                                 className="bg-white !text-black font-bold hover:bg-gray-100 focus:ring-white [&_svg]:text-black"
                             >
                                 Get Started Free <ArrowRight className="w-5 h-5" />
                             </Button>
-                        </Link>
+                        </a>
                     </motion.div>
                 </div>
             </section>
