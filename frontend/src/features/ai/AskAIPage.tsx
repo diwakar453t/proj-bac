@@ -66,7 +66,7 @@ function getRuleBasedResponse(message: string): string {
     }
 
     if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
-        return "Hi there! 👋 I'm your MindPulse AI wellness assistant.\n\n" +
+        return "Hi there! 👋 I'm your Mind Matrix AI wellness assistant.\n\n" +
             "I can help you with:\n" +
             "- 🧠 **Analyzing** your mood and sleep patterns\n" +
             "- 💬 **Talking through** stress, anxiety, or low mood\n" +
@@ -127,7 +127,7 @@ export function AskAIPage() {
         {
             id: '0',
             role: 'assistant',
-            content: `Hi ${user?.full_name?.split(' ')[0] || 'there'}! 👋 I'm your MindPulse AI wellness assistant.\n\nI can analyze your mood patterns, help with stress, guide breathing exercises, and much more.\n\nWhat's on your mind today?`,
+            content: `Hi ${user?.full_name?.split(' ')[0] || 'there'}! 👋 I'm your Mind Matrix AI wellness assistant.\n\nI can analyze your mood patterns, help with stress, guide breathing exercises, and much more.\n\nWhat's on your mind today?`,
             timestamp: new Date(),
         },
     ]);

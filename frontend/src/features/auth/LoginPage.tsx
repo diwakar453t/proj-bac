@@ -46,7 +46,7 @@ export function LoginPage() {
                         <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center mb-3">
                             <Brain className="w-6 h-6 text-white" />
                         </div>
-                        <h1 className="text-2xl font-bold text-gradient">MindPulse</h1>
+                        <h1 className="text-2xl font-bold text-gradient">Mind Matrix</h1>
                         <p className="text-text-secondary dark:text-text-dark-secondary mt-1">Welcome back</p>
                     </div>
 

@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { NeuralBrainCanvas } from '@/components/three/NeuralBrainCanvas';
+import { ScrollAnimatedBackground } from '@/components/three/ScrollAnimatedBackground';
 
 const features = [
     {
@@ -78,7 +79,8 @@ export function LandingPage() {
     };
 
     return (
-        <div className="min-h-screen bg-bg-light dark:bg-bg-dark">
+        <div className="min-h-screen bg-bg-light dark:bg-bg-dark relative overflow-hidden">
+            <ScrollAnimatedBackground />
             {/* Navbar */}
             <nav className="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-lg border-b border-border-light dark:border-border-dark">
                 <div className="max-w-7xl mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">

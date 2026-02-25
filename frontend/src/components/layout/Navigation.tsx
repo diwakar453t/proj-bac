@@ -148,7 +148,7 @@ export function Navbar() {
                     <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
                         <Brain className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-bold text-gradient">MindPulse</span>
+                    <span className="font-bold text-gradient">Mind Matrix</span>
                 </div>
 
                 {/* Search bar placeholder */}
