@@ -18,7 +18,12 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
 
     # CORS
-    CORS_ORIGINS: List[str] = ["http://localhost:5173", "http://localhost:3000"]
+    CORS_ORIGINS: List[str] = [
+        "http://localhost:5173", 
+        "http://localhost:3000",
+        "https://mindpulse-app.vercel.app",
+        "https://proj-bac.vercel.app"
+    ]
 
     class Config:
         env_file = ".env"
