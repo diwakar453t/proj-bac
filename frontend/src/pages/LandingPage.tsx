@@ -5,6 +5,7 @@ import {
     CheckCircle, ArrowRight, Star, Users, Sparkles,
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import { NeuralBrainCanvas } from '@/components/three/NeuralBrainCanvas';
 
 const features = [
     {
@@ -49,7 +50,7 @@ const testimonials = [
     {
         name: 'Aarav S.',
         role: 'Student',
-        content: "MindPulse helped me understand my sleep patterns and improve my exam performance.",
+        content: "Mind Matrix helped me understand my sleep patterns and improve my exam performance.",
         rating: 5,
     },
     {
@@ -85,7 +86,7 @@ export function LandingPage() {
                         <div className="w-9 h-9 rounded-xl gradient-primary flex items-center justify-center">
                             <Brain className="w-5 h-5 text-white" />
                         </div>
-                        <span className="font-bold text-xl text-gradient">MindPulse</span>
+                        <span className="font-bold text-xl text-gradient">Mind Matrix</span>
                     </div>
                     <div className="flex items-center gap-3">
                         <Link to="/ask-ai">
@@ -93,8 +94,8 @@ export function LandingPage() {
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.97 }}
                                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-semibold
-                                    bg-gradient-to-r from-violet-500 to-indigo-500 text-white shadow-md
-                                    hover:shadow-violet-300 hover:shadow-lg transition-shadow duration-300"
+                    bg-gradient-to-r from-violet-500 to-indigo-500 text-white shadow-md
+                    hover:shadow-violet-300 hover:shadow-lg transition-shadow duration-300"
                             >
                                 <Sparkles className="w-4 h-4" />
                                 Ask AI
@@ -113,51 +114,92 @@ export function LandingPage() {
             {/* Hero Section */}
             <section className="relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-                <div className="max-w-7xl mx-auto px-4 lg:px-8 py-20 lg:py-32">
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="max-w-3xl"
-                    >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-                            <Zap className="w-4 h-4" />
-                            AI-powered mental wellness platform
-                        </div>
-                        <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
-                            Your mental health,{' '}
-                            <span className="text-gradient">powered by AI</span>
-                        </h1>
-                        <p className="text-lg lg:text-xl text-text-secondary dark:text-text-dark-secondary mb-8 max-w-2xl">
-                            Track your daily wellness, get AI-driven insights, and take control of your mental health with personalized recommendations.
-                        </p>
-                        <div className="flex flex-col sm:flex-row items-start gap-4">
-                            <Link to="/signup">
-                                <Button size="lg">
-                                    Start Free <ArrowRight className="w-5 h-5" />
-                                </Button>
-                            </Link>
-                            <Link to="/login">
-                                <Button variant="outline" size="lg">
-                                    Sign In
-                                </Button>
-                            </Link>
-                        </div>
-                        <div className="flex items-center gap-6 mt-8 text-sm text-text-secondary">
-                            <div className="flex items-center gap-1">
-                                <CheckCircle className="w-4 h-4 text-success" />
-                                Free to start
+                <div className="max-w-7xl mx-auto px-4 lg:px-8 py-16 lg:py-28">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        {/* Left — copy */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 40 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                        >
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                                <Zap className="w-4 h-4" />
+                                AI-powered mental wellness platform
                             </div>
-                            <div className="flex items-center gap-1">
-                                <CheckCircle className="w-4 h-4 text-success" />
-                                No credit card
+                            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                                Your mental health,{' '}
+                                <span className="text-gradient">powered by AI</span>
+                            </h1>
+                            <p className="text-lg lg:text-xl text-text-secondary dark:text-text-dark-secondary mb-8 max-w-xl">
+                                Track your daily wellness, get AI-driven insights, and take control of your mental health with personalized recommendations.
+                            </p>
+                            <div className="flex flex-col sm:flex-row items-start gap-4">
+                                <Link to="/signup">
+                                    <Button size="lg">
+                                        Start Free <ArrowRight className="w-5 h-5" />
+                                    </Button>
+                                </Link>
+                                <Link to="/login">
+                                    <Button variant="outline" size="lg">
+                                        Sign In
+                                    </Button>
+                                </Link>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <CheckCircle className="w-4 h-4 text-success" />
-                                Privacy first
+                            <div className="flex items-center gap-6 mt-8 text-sm text-text-secondary">
+                                <div className="flex items-center gap-1">
+                                    <CheckCircle className="w-4 h-4 text-success" />
+                                    Free to start
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <CheckCircle className="w-4 h-4 text-success" />
+                                    No credit card
+                                </div>
+                                <div className="flex items-center gap-1">
+                                    <CheckCircle className="w-4 h-4 text-success" />
+                                    Privacy first
+                                </div>
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+
+                        {/* Right — Three.js Neural Brain */}
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="relative hidden lg:block"
+                        >
+                            <div className="w-full h-[480px] rounded-3xl overflow-hidden bg-gradient-to-br from-violet-950/60 to-indigo-950/60 border border-violet-500/20 shadow-2xl shadow-violet-500/10">
+                                <NeuralBrainCanvas />
+                            </div>
+                            {/* Floating badges */}
+                            <motion.div
+                                animate={{ y: [0, -8, 0] }}
+                                transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
+                                className="absolute -bottom-4 -left-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg shadow-black/10 px-4 py-3 flex items-center gap-2 border border-border-light dark:border-border-dark"
+                            >
+                                <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center">
+                                    <HeartPulse className="w-4 h-4 text-green-600" />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-text-secondary">Mood Today</p>
+                                    <p className="text-sm font-bold text-success">8.4 / 10</p>
+                                </div>
+                            </motion.div>
+                            <motion.div
+                                animate={{ y: [0, 8, 0] }}
+                                transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut', delay: 0.5 }}
+                                className="absolute -top-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl shadow-lg shadow-black/10 px-4 py-3 flex items-center gap-2 border border-border-light dark:border-border-dark"
+                            >
+                                <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center">
+                                    <Brain className="w-4 h-4 text-violet-600" />
+                                </div>
+                                <div>
+                                    <p className="text-xs text-text-secondary">AI Insights Active</p>
+                                    <p className="text-sm font-bold text-violet-600">Real-time</p>
+                                </div>
+                            </motion.div>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -284,23 +326,25 @@ export function LandingPage() {
                 </div>
             </section>
 
-            {/* CTA */}
+            {/* CTA — white text on gradient, black button */}
             <section className="py-20 lg:py-28">
                 <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="gradient-primary rounded-3xl p-12 text-white"
+                        className="gradient-primary rounded-3xl p-12"
                     >
-                        <h2 className="text-3xl lg:text-4xl font-bold mb-4">Ready to start your wellness journey?</h2>
+                        <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
+                            Ready to start your wellness journey?
+                        </h2>
                         <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                            Join thousands of users who are taking control of their mental health with MindPulse.
+                            Join thousands of users who are taking control of their mental health with Mind Matrix.
                         </p>
                         <Link to="/signup">
                             <Button
                                 size="lg"
-                                className="bg-white text-primary hover:bg-gray-100 focus:ring-white"
+                                className="bg-white text-black font-bold hover:bg-gray-100 focus:ring-white"
                             >
                                 Get Started Free <ArrowRight className="w-5 h-5" />
                             </Button>
@@ -317,14 +361,14 @@ export function LandingPage() {
                             <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
                                 <Brain className="w-4 h-4 text-white" />
                             </div>
-                            <span className="font-bold text-gradient">MindPulse</span>
+                            <span className="font-bold text-gradient">Mind Matrix</span>
                         </div>
                         <div className="flex items-center gap-1 text-sm text-text-secondary">
                             <Users className="w-4 h-4" />
                             Built with ❤️ by Diwakar Patel
                         </div>
                         <p className="text-sm text-text-secondary">
-                            © {new Date().getFullYear()} MindPulse. All rights reserved.
+                            © {new Date().getFullYear()} Mind Matrix. All rights reserved.
                         </p>
                     </div>
                 </div>
