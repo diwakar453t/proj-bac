@@ -91,7 +91,7 @@ export function LandingPage() {
                         <span className="font-bold text-xl text-gradient">Mind Matrix</span>
                     </div>
                     <div className="flex items-center gap-3">
-                        <Link to="/ask-ai">
+                        <a href="/ask-ai.html">
                             <motion.button
                                 whileHover={{ scale: 1.03 }}
                                 whileTap={{ scale: 0.97 }}
@@ -102,7 +102,7 @@ export function LandingPage() {
                                 <Sparkles className="w-4 h-4" />
                                 Ask AI
                             </motion.button>
-                        </Link>
+                        </a>
                         <Link to="/login">
                             <Button variant="ghost" size="sm">Sign In</Button>
                         </Link>
