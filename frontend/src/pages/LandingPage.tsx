@@ -128,7 +128,7 @@ export function LandingPage() {
                             </div>
                             <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
                                 Your mental health,{' '}
-                                <span className="text-gradient">powered by AI</span>
+                                <span className="text-gradient">Powered by AI</span>
                             </h1>
                             <p className="text-lg lg:text-xl text-text-secondary dark:text-text-dark-secondary mb-8 max-w-xl">
                                 Track your daily wellness, get AI-driven insights, and take control of your mental health with personalized recommendations.
@@ -213,7 +213,7 @@ export function LandingPage() {
                         className="text-center mb-16"
                     >
                         <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-                            Everything you need for <span className="text-gradient">mental wellness</span>
+                            Everything you need for mental wellness
                         </h2>
                         <p className="text-text-secondary dark:text-text-dark-secondary max-w-2xl mx-auto">
                             A comprehensive platform designed to help you understand and improve your mental health.
@@ -310,14 +310,14 @@ export function LandingPage() {
                                         <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                                     ))}
                                 </div>
-                                <p className="text-sm leading-relaxed mb-4">{t.content}</p>
+                                <p className="text-sm leading-relaxed mb-4 text-text-secondary dark:text-text-dark-secondary">{t.content}</p>
                                 <div className="flex items-center gap-2">
-                                    <div className="w-8 h-8 rounded-full gradient-secondary flex items-center justify-center text-white text-xs font-bold">
+                                    <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-slate-700 flex items-center justify-center text-text-primary dark:text-white text-xs font-bold">
                                         {t.name[0]}
                                     </div>
                                     <div>
-                                        <p className="text-sm font-medium">{t.name}</p>
-                                        <p className="text-xs text-text-secondary">{t.role}</p>
+                                        <p className="text-sm font-medium text-text-secondary dark:text-text-dark-secondary">{t.name}</p>
+                                        <p className="text-xs text-text-primary dark:text-white font-medium">{t.role}</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -344,7 +344,7 @@ export function LandingPage() {
                         <Link to="/signup">
                             <Button
                                 size="lg"
-                                className="bg-white text-black font-bold hover:bg-gray-100 focus:ring-white"
+                                className="bg-white !text-black font-bold hover:bg-gray-100 focus:ring-white [&_svg]:text-black"
                             >
                                 Get Started Free <ArrowRight className="w-5 h-5" />
                             </Button>
@@ -365,7 +365,7 @@ export function LandingPage() {
                         </div>
                         <div className="flex items-center gap-1 text-sm text-text-secondary">
                             <Users className="w-4 h-4" />
-                            Built with ❤️ by Diwakar Patel
+                            Built By Team Platopy
                         </div>
                         <p className="text-sm text-text-secondary">
                             © {new Date().getFullYear()} Mind Matrix. All rights reserved.
